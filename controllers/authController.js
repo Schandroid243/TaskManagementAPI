@@ -7,7 +7,7 @@ const login = async (req, res) => {
     try{
         const user = await User.findOne({email: req.body.email});
         if(user) {
-            //const auth = await bcrypt.compare(req.body.password, user.password);
+            const auth = await bcrypt.compare(req.body.password, user.password);
             console.log(user);
             if(req.body.password === user.password) {
                 return res.status(200).json({
