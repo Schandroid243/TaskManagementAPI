@@ -5,7 +5,31 @@ const pkg = require('validator');
 const {Schema} = mongoose;
 
 const UserSchema = new Schema({
-    username: {
+    name: {
+        type: String,
+        required: true,
+    },
+    firstName: {
+        type: String,
+        required: true,
+    },
+    lastName: {
+        type: String,
+        required: true,
+    },
+    adress:{
+        type: String,
+        required: true,
+    },
+    phone:{
+        type: String,
+        required: true,
+    },
+    genre:{
+        type: String,
+        required: true,
+    },
+    role:{
         type: String,
         required: true,
     },
@@ -18,6 +42,10 @@ const UserSchema = new Schema({
     password: {
         type: String,
         required: true,
+    },
+    date:{
+        type: Date,
+        default: Date.now()
     }
 });
 

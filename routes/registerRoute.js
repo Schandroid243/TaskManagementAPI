@@ -6,11 +6,8 @@ const route = express.Router();
 
 route.post('/', async (req, res, next) => {
     try{
-        const { username, email, password } = req.body;
         const user = await User.create({
-            username,
-            email,
-            password
+            ...req.body
         });
         return res.status(201).json({user: user._id});
     } catch(err){
