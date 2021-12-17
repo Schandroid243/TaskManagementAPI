@@ -28,16 +28,16 @@ const { requireAuth } = require('./middleware/authMiddleware');
 
 app.use('/auth', authRoute);
 app.use('/register', registerRoute);
-app.use('/tasks', requireAuth, taskRoute);
-app.use('/roles', requireAuth, accessLevelRoute);
-app.use('/articles', requireAuth, articleRoute);
-app.use('/categories', requireAuth, categorieRoute);
-app.use('/commandes', requireAuth, commandeRoute);
-app.use('/espaces', requireAuth, espaceRoute);
-app.use('/genres', requireAuth, genreRoute);
-app.use('/menus', requireAuth, menuRoute);
-app.use('/statutCommande', requireAuth, statutCommandeRoute);
-app.use('/users', requireAuth, userRoute);
+app.use('/tasks', taskRoute);
+app.use('/roles', accessLevelRoute);
+app.use('/articles', articleRoute);
+app.use('/categories', categorieRoute);
+app.use('/commandes', commandeRoute);
+app.use('/espaces', espaceRoute);
+app.use('/genres', genreRoute);
+app.use('/menus', menuRoute);
+app.use('/statutCommande', statutCommandeRoute);
+app.use('/users', userRoute);
 
 app.get('/', (req, res) => {
     res.send('Hello World');
