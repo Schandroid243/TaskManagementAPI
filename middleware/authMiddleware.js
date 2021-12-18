@@ -11,6 +11,7 @@ const requireAuth = (req, res, next) => {
                     message: err.message
                 })
             }else {
+                
                 let user = User.findById(decodedToken.id);
                 res.locals.user = user;
                 next();

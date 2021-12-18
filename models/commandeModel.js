@@ -32,6 +32,10 @@ const CommandeSchema = new Schema({
         required: true
     },
     date:{
+        type: String,
+        required: true
+    },
+    timestamp:{
         type: Date,
         default: Date.now()
     }

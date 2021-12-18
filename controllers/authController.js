@@ -1,6 +1,7 @@
 const User = require('../models/userModel');
 const { createToken, maxAge } = require('../utils/createToken');
 const bcrypt = require('bcrypt');
+const jwt  = require('jsonwebtoken');
 
 
 const login = async (req, res) => {
@@ -29,4 +30,11 @@ const login = async (req, res) => {
     }
 }
 
-module.exports = { login };
+const me = async (req, res) => {
+    console.log(res.locals.user);
+    return res.json({
+        user: res.locals.user.toJSON()
+    })       
+}
+
+module.exports = { login, me };
